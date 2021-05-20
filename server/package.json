@@ -12,11 +12,11 @@
     "start:server": "node ./dist/server.js",
     "start:server-dev": "nodemon ./dist/server.js",
     "dev": "set \"NODE_ENV=local\" && concurrently \"npm run build:watch\" \"npm run start:server-dev\"",
-    "knex:migrate:make:migration": "knex --knexfile dist/database/db_knex.js -x js migrate:make create-user-tabel",
-    "knex:migrate:latest": "knex --knexfile dist/database/db_knex.js migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile dist/database/db_knex.js migrate:rollback",
-    "knex:migrate:make:seed": "knex --knexfile dist/database/db_knex.js seed:make 01_user",
-    "knex:migrate:run-seed": "knex --knexfile dist/database/db_knex.js seed:run"
+    "knex:migrate:make:migration": "knex --knexfile src/database/db_knex.ts -x js migrate:make create-user-tabel",
+    "knex:migrate:latest": "knex --knexfile src/database/db_knex.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile src/database/db_knex.ts migrate:rollback",
+    "knex:migrate:make:seed": "knex --knexfile src/database/db_knex.ts seed:make 01_user",
+    "knex:migrate:run-seed": "knex --knexfile src/database/db_knex.ts seed:run"
   },
   "author": "",
   "license": "ISC",

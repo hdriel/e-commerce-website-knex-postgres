@@ -2,13 +2,15 @@ version: '3'
 services:
   postgres:
     image: 'postgres:alpine'
-    volumes:
-      - ./data/postgress/data:/var/lib/postgresql/data
-      - ./data/postgress/logs:/logs
-    ports:
-      - 5432:5432
-    command: 'postgres -c logging_collector=on -c log_destination=stderr -c log_directory=/logs'
+    container_name: postgres
     environment:
       POSTGRES_DB: e-commerce-website
       POSTGRES_USER: hadriel
       POSTGRES_PASSWORD: benjo
+    ports:
+      - 5432:5432
+    volumes:
+      - './data/postgress/db_data:/var/lib/postgresql'
+      - ./data/postgress/logs:/logs
+    command: 'postgres -c logging_collector=on -c log_destination=stderr -c log_directory=/logs'
+
