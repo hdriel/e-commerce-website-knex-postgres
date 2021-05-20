@@ -1,0 +1,9 @@
+node_modules
+pgdatabase
+esdata
+redisdata
+*.env
+**/dist/**
+.redisdata
+data
+.data
